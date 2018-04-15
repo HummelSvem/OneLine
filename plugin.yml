@@ -1,6 +1,6 @@
 name: OneLine
 version: 1.0
-author: zGodSky
+author: ssskkkyyy
 api: [3.0.0-ALPHA11]
 main: Sky\OneLine\OneLine
 description: 'OneLine in Minecraft'
