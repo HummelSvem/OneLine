@@ -60,12 +60,12 @@ class OneLine extends PluginBase implements Listener{
         $y = $this->cfg->get('y');
         $z = $this->cfg->get('z');
         $this->particle = new FloatingTextParticle(new Position($x, $y, $z, $this->getServer()->getDefaultLevel()), '');
-        $this->getLogger()->info($this->prefix.TextFormat::WHITE.' by Sky enabled!');
+        $this->getLogger()->info($this->prefix.TextFormat::WHITE.' by zGodSky enabled!');
     }
     
     public function initConfig(){
         $this->cfg = new Config($this->getDataFolder().'config.yml', Config::YAML);
-        $this->cfg->set('prefix', '§7[§6OneLine§7]');
+        $this->cfg->set('prefix', '§7[§bOneLine§7]');
         $this->cfg->set('text', FALSE);
         $this->cfg->set('x', 0);
         $this->cfg->set('y', 0);
@@ -223,7 +223,7 @@ class OneLine extends PluginBase implements Listener{
             if(!$sender instanceof Player){
 				return true;
 			}
-			$sender->transfer('127.0.0.1', 19133);
+			$sender->transfer('EnjoyTheView.tk', 19132);
 			return true;
         }
     }
@@ -466,12 +466,12 @@ class OneLine extends PluginBase implements Listener{
                     $ay = $arenafile->get('y') - 0.5;
                     $py = $player->y;
                     if($py < $ay){
-                        if($arenafile->get('end') == true){
+                        if($arenafile->get('end') == false){
                             return;
                         }
                         $arenafile->set('winner', $this->getWinner($player));
                         $arenafile->set('counter', 0);
-                        $arenafile->set('end', true);
+                        $arenafile->set('end', false);
                         $arenafile->save();
                     }
                 }
@@ -497,7 +497,7 @@ class OneLine extends PluginBase implements Listener{
                 $damagerinv = $damager->getInventory();
                 $iteminhand = $damagerinv->getItemInHand()->getId();
                 if($iteminhand == 280){
-                    $event->setKnockBack(0.4);
+                    $event->setKnockBack(0.6);
                     $event->setDamage(0);
                 }
             }
@@ -837,7 +837,7 @@ class OLTask extends PluginTask{
                         }
                         $player->getInventory()->clearAll();
                         $item = Item::get(280, 0, 1);
-                        $item->setCustomName(TextFormat::GOLD.TextFormat::ITALIC.'KNOCKBACK');
+                        $item->setCustomName(TextFormat::GOLD.TextFormat::ITALIC.'Stick');
                         $player->getInventory()->setItem(0, $item, TRUE);
                         $player->sendPopup(TextFormat::GREEN.'GO!');
                         $player->sendMessage($prefix.TextFormat::WHITE.' You have 2 minutes to kill your opponent!');
