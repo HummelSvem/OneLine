@@ -1,7 +1,7 @@
 name: OneLine
 version: 1.0
 author: ssskkkyyy
-api: [3.0.0-ALPHA11]
+api: [3.0.0-ALPHA12]
 main: Sky\OneLine\OneLine
 description: 'OneLine in Minecraft'
 commands:
